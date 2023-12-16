@@ -9,14 +9,15 @@ public class MainTest {
         Nodo nodo4 = new Nodo("4");
         Nodo nodo5 = new Nodo("3");
 
-
         nodoRoot.setDestro(nodo1);
         nodo1.setDestro(nodo4);
         nodo1.setSinistro(nodo5);
         nodo5.setDestro(nodo3);
         nodo5.setSinistro(nodo2);
 
-        System.out.println(new Nodo().somma(nodoRoot));
+        System.out.println(
+                new Nodo()
+                        .somma(nodoRoot));
 
     }
 

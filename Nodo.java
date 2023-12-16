@@ -9,36 +9,38 @@ public class Nodo {
         this.sinistro = null;
     }
 
-
     public Nodo(String valore) {
         this.valore = valore;
         this.destro = null;
         this.sinistro = null;
     }
 
-    public Nodo getCopia(){
-        Nodo copia = new Nodo(this.valore);
-        if(this.sinistro != null){
-            copia.setSinistro(this.sinistro.getCopia());
+    public Nodo getCoppia() {
+        Nodo coppia = new Nodo(this.valore);
+        if (this.sinistro != null) {
+            coppia.setSinistro(this.sinistro.getCoppia());
         }
-        if(this.destro != null){
-            copia.setSinistro(this.destro.getCopia());
+        if (this.destro != null) {
+            coppia.setSinistro(this.destro.getCoppia());
         }
-        return copia;
+        return coppia;
     }
 
-    public Integer estraiValoreNodo(){
-        if (this == null) return 0;
+    public Integer estraiValoreNodo() {
+        if (this == null)
+            return 0;
         String valore = this.getValore();
-        return (valore != null ) ? Integer.parseInt(valore) : 0 ;
+        return (valore != null) ? Integer.parseInt(valore) : 0;
     }
 
-    public Integer somma(Nodo nodo){
+    public Integer somma(Nodo nodo) {
         /**
-        if (nodo == null) return 0;
-        return nodo.estraiValoreNodo() + somma(nodo.getDestro()) + somma(nodo.getSinistro());
-        */
-        if (nodo == null) return 0;
+         * if (nodo == null) return 0;
+         * return nodo.estraiValoreNodo() + somma(nodo.getDestro()) +
+         * somma(nodo.getSinistro());
+         */
+        if (nodo == null)
+            return 0;
         int valoreNodo = nodo.estraiValoreNodo();
         int sommaDestro = somma(nodo.getDestro());
         int sommaSinistro = somma(nodo.getSinistro());
